@@ -331,7 +331,19 @@ pub async fn health() -> impl Responder {
 // Route configuration
 // ──────────────────────────────────────────────
 
+pub async fn root_handler() -> impl Responder {
+    HttpResponse::Ok().json(serde_json::json!({
+        "name": "TipLink MPC API",
+        "version": "1.0",
+        "status": "active"
+    }))
+}
+
 pub fn configure(cfg: &mut web::ServiceConfig) {
+    // Root handler
+    cfg.route("/", web::get().to(root_handler));
+    
+    // API scope
     cfg.service(
         web::scope("/api")
             .route("/health", web::get().to(health))
