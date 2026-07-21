@@ -6,6 +6,7 @@ edition = "2024"
 [dependencies]
 actix-rt = "2.11.0"
 actix-web = "4.14.0"
+actix-cors = "0.7.0"
 bs58 = "0.5.1"
 chrono = "0.4.45"
 curve25519-dalek = { version = "4", features = ["rand_core"] }

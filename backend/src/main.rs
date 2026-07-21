@@ -1,3 +1,4 @@
+use actix_cors::Cors;
 use actix_web::{web, App, HttpServer};
 use dotenvy::dotenv;
 use solana_client::nonblocking::rpc_client::RpcClient;
@@ -61,7 +62,10 @@ async fn main() -> std::io::Result<()> {
 
     // Start Actix-Web server
     HttpServer::new(move || {
+        let cors = Cors::permissive(); // Allow any origin in dev/prod for simplicity
+
         App::new()
+            .wrap(cors)
             .app_data(web::Data::new(db_pool.clone()))
             .app_data(web::Data::new(mpc_engine.clone()))
             .app_data(web::Data::new(rpc_client.clone()))
