@@ -1,0 +1,18 @@
+[package]
+name = "my-mpc"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+futures = "0.3"
+tokio = {version = "1.0", features = ["full"], optional = true }
+serde = {version = "1.0", features = ["derive"] }
+thiserror = "1.0"
+rand = "0.8"
+sha2 = "0.10"
+generic-ec = "0.4" # for elliptic curve operations[reference:10]
+
+[features]
+deafult = ["tokio"]
+tokio = ["dep:tokio"]
+sim = []

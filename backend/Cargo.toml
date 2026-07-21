@@ -26,7 +26,7 @@ tracing = "0.1.44"
 tracing-subscriber = "0.3.23"
 uuid = { version = "1.24.0", features = ["v4", "serde"] }
 validator = { version = "0.19.0", features = ["derive"] }
-my-solana-indexer = { path = "../../RUST/solana-indexer" }
-my-mpc = { path = "../../RUST/my-mpc" }
+my-solana-indexer = { path = "../crates/solana-indexer" }
+my-mpc = { path = "../crates/my-mpc" }
 solana-program = "2.1.0"
 solana-transaction-status = "2.1.0"
