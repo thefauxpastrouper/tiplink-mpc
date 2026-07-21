@@ -1,0 +1,32 @@
+[package]
+name = "backend"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+actix-rt = "2.11.0"
+actix-web = "4.14.0"
+bs58 = "0.5.1"
+chrono = "0.4.45"
+curve25519-dalek = { version = "4", features = ["rand_core"] }
+dotenvy = "0.15.7"
+ed25519-dalek = { version = "2", features = ["rand_core", "digest"] }
+hex = "0.4.3"
+rand = "0.8"
+redis = { version = "0.25.4", features = ["aio", "tokio-comp", "tokio-rustls-comp"] }
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.151"
+sha2 = "0.10"
+solana-client = "2.1.0"
+solana-sdk = "2.1.0"
+sqlx = { version = "0.9.0", features = ["postgres", "runtime-tokio", "tls-rustls", "macros", "uuid"] }
+thiserror = "2.0.17"
+tokio = { version = "1.53.1", features = ["full"] }
+tracing = "0.1.44"
+tracing-subscriber = "0.3.23"
+uuid = { version = "1.24.0", features = ["v4", "serde"] }
+validator = { version = "0.19.0", features = ["derive"] }
+my-solana-indexer = { path = "../../RUST/solana-indexer" }
+my-mpc = { path = "../../RUST/my-mpc" }
+solana-program = "2.1.0"
+solana-transaction-status = "2.1.0"

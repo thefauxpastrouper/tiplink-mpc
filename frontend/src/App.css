@@ -1,0 +1,221 @@
+/* App.css */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary: #9d4edd;
+  --primary-hover: #7b2cbf;
+  --bg-gradient: linear-gradient(135deg, #10002b 0%, #240046 50%, #3c096c 100%);
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --text-main: #ffffff;
+  --text-muted: #c7b2e8;
+  --error: #ff4d4d;
+  --success: #2dcc70;
+}
+
+body {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 40px 30px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  text-align: center;
+  background: linear-gradient(to right, #e0aaff, #9d4edd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  margin-bottom: 30px;
+  font-weight: 300;
+}
+
+.primary-btn {
+  width: 100%;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 12px;
+  background: var(--primary);
+  color: white;
+  font-size: 1.1rem;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 15px rgba(157, 78, 221, 0.4);
+}
+
+.primary-btn:hover:not(:disabled) {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.primary-btn:disabled {
+  background: #5a3c77;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.wallet-section {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.wallet-card {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.info-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.info-row:last-child {
+  margin-bottom: 0;
+}
+
+.label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.value {
+  font-family: monospace;
+  font-size: 0.95rem;
+  word-break: break-all;
+  color: #e0aaff;
+}
+
+.transfer-form h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 1px solid var(--glass-border);
+  background: rgba(0, 0, 0, 0.15);
+  color: white;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.submit-btn {
+  margin-top: 10px;
+}
+
+.status-message {
+  margin-top: 20px;
+  text-align: center;
+  color: #a3b18a;
+  font-weight: 500;
+  font-size: 0.95rem;
+  animation: pulse 2s infinite;
+}
+
+.error-message {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  background: rgba(255, 77, 77, 0.1);
+  border: 1px solid rgba(255, 77, 77, 0.3);
+  color: var(--error);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.success-message {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  background: rgba(45, 204, 112, 0.1);
+  border: 1px solid rgba(45, 204, 112, 0.3);
+  color: var(--success);
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.tx-link {
+  display: block;
+  margin-top: 8px;
+  color: #e0aaff;
+  text-decoration: none;
+  font-family: monospace;
+  word-break: break-all;
+  transition: color 0.3s ease;
+}
+
+.tx-link:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
