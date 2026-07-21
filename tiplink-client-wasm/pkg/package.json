@@ -1,0 +1,17 @@
+{
+  "name": "tiplink-client-wasm",
+  "type": "module",
+  "version": "0.1.0",
+  "files": [
+    "tiplink_client_wasm_bg.wasm",
+    "tiplink_client_wasm.js",
+    "tiplink_client_wasm_bg.js",
+    "tiplink_client_wasm.d.ts"
+  ],
+  "main": "tiplink_client_wasm.js",
+  "types": "tiplink_client_wasm.d.ts",
+  "sideEffects": [
+    "./tiplink_client_wasm.js",
+    "./snippets/*"
+  ]
+}
